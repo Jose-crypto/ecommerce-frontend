@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AxiosService } from '../services/axios.service'; 
-
+import { HttpservService } from '../services/httpserv.service';
 @Component({
   selector: 'app-auth-content',
   standalone: true,
@@ -10,20 +9,21 @@ import { AxiosService } from '../services/axios.service';
 })
 export class AuthContentComponent {
 
-  //respons for the backend
-  data: string[]=[];
+   // Esta propiedad almacenará los mensajes que recibimos desde el backend
+  data: string[] = [];
 
-  //inyectar el servicio de axios in te constructor
-  constructor(private axiosService: AxiosService){}
-  
-  ngOnInit(): void{
-    
-    this.axiosService.request(
-      "GET",
-      "/messages",
-      {}
-    ).then(
-      (response) => this.data = response.data
+  constructor(private httpService: HttpservService) {}
+
+  // En el ngOnInit realizamos la petición GET usando el servicio HttpService
+  ngOnInit(): void {
+    // Usamos el servicio request para hacer la solicitud GET
+    this.httpService.request('GET', '/messages').subscribe(
+      (response) => {
+        this.data = response;
+      },
+      (error) => {
+        console.error('Error al obtener los mensajes', error);
+      }
     );
   }
 
