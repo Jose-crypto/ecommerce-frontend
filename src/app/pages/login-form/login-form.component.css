@@ -1,0 +1,69 @@
+/* Fondo general */
+body {
+    background-color: #f4f7fc;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo del contenedor */
+  .container {
+    max-width: 500px;
+  }
+  
+  /* Estilo de la tarjeta */
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    border: none;
+  }
+  
+  /* Pestañas (nav-pills) */
+  .nav-pills .nav-link {
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-align: center;
+    color: #007bff;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+  
+  .nav-pills {
+    justify-content: space-evenly;
+  }
+  
+  /* Campos de formulario */
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Botones */
+  .btn {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Botones al hacer hover */
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Efecto de fondo en el formulario */
+  .form-label {
+    font-weight: bold;
+  }
+  
