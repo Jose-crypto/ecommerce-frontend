@@ -16,9 +16,15 @@ export class CategoryListComponent {
   constructor(private categoriasService: CategoriasService, private router: Router) {}
 
   ngOnInit(): void {
-    this.categoriasService.getCategorias().subscribe(data => {
-      this.categorias = data;
-      console.log(data)
+    this.categoriasService.getCategorias().subscribe({
+      next: (data) => {
+        this.categorias = data;  // Asignar los datos a la propiedad
+        console.log(data);        // Mostrar los datos en consola para depuración
+      },
+      error: (error) => {
+        console.error('Hubo un error al obtener las categorías:', error);
+        alert('No se pudo obtener las categorías. Por favor, intente más tarde.');
+      }
     });
   }
 
